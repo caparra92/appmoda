@@ -18,7 +18,11 @@
                 color="white"
                 label="Telefono"
                 class="input-tel"
-                aria-label="Telefono"
+                maxlength = "12"
+                pattern="[0-9]{7,15}"
+                :rules="inputRules"
+                @blur="limpiarNumero"
+                @keyup="limpiarNumero"
             >
                 <input type="tel">
             </v-text-field>
@@ -31,6 +35,24 @@
 <script>
 export default {
   name: "Login",
+  data () {
+      return {
+          inputRules: [
+              v => v ? v.length >= 12 : 'El numero mínimo de caracteres es 12',
+          ],
+          validNumbers : [
+            7865470213,
+            2345678903,
+            3457896574
+          ]
+      }
+  },
+  methods: {
+    limpiarNumero(obj) {
+  /* El evento "change" sólo saltará si son diferentes */
+      obj.target.value = obj.target.value.replace(/\D/g, '');
+    }
+  }
 };
 </script>
 
@@ -62,6 +84,7 @@ export default {
 
  .v-text-field__slot input {
     color: white !important;
+     font-size: 1.3rem;
   }
 
   .v-text-field--outlined fieldset {

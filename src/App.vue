@@ -1,19 +1,16 @@
 <template>
   <v-app data-app="true" class="application theme--light">
     <v-main>
-      <Login/>
+      <router-view></router-view>
     </v-main>
   </v-app>
 </template>
 
 <script>
-import Login from './views/Login';
-
 export default {
   name: 'App',
 
   components: {
-    Login,
   },
 
   data: () => ({
