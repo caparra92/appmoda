@@ -31,6 +31,18 @@ export default new Vuex.Store({
             reject(error)
           })
       })
+    },
+    getCatalog(_, value) {
+      console.log(value.id)
+      return new Promise((resolve, reject) => {
+        axios.get(`https://api.tissini.app/api/v2/categories/${value.id}/products`)
+          .then(res => {
+            resolve(res)
+          })
+          .catch(error => {
+            reject(error)
+          })
+      })
     }
   },
   modules: {

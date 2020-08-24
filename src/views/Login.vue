@@ -12,9 +12,10 @@
            </div>
       </v-card-title>
       <v-card-text>
-          <v-form>
+          <v-form @submit.prevent="validateUser(phone)">
             <v-text-field
                 outlined
+                v-model="phone"
                 color="white"
                 label="Telefono"
                 class="input-tel"
@@ -24,7 +25,6 @@
                 @blur="limpiarNumero"
                 @keyup="limpiarNumero"
             >
-                <input type="tel">
             </v-text-field>
           </v-form>
       </v-card-text>
@@ -38,19 +38,28 @@ export default {
   data () {
       return {
           inputRules: [
-              v => v ? v.length >= 12 : 'El numero mínimo de caracteres es 12',
+              v => v ? v.length >= 10 : 'El numero mínimo de caracteres es 12'
           ],
           validNumbers : [
             7865470213,
             2345678903,
             3457896574
-          ]
+          ],
+          phone: ''
       }
   },
   methods: {
     limpiarNumero(obj) {
-  /* El evento "change" sólo saltará si son diferentes */
       obj.target.value = obj.target.value.replace(/\D/g, '');
+    },
+    validateUser(value) {
+      const number = this.validNumbers.find(number => number === parseInt(value)) 
+      if(number !== undefined) {
+        localStorage.setItem('user',number)
+        this.$router.push('/categories')
+      } else {
+        return
+      }
     }
   }
 };

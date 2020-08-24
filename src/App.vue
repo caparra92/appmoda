@@ -1,5 +1,5 @@
 <template>
-  <v-app data-app="true" class="application theme--light">
+  <v-app class="application theme--light">
     <v-main>
       <router-view></router-view>
     </v-main>

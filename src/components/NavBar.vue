@@ -3,7 +3,7 @@
     <v-toolbar-title>Cliente pruebas</v-toolbar-title>
 
     <v-spacer></v-spacer>
-
+    
     <slot/>
   </v-app-bar>
 </template>
