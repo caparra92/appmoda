@@ -10,7 +10,6 @@
       </v-btn>
     </NavBar>
     <v-main>
-        <Loader/>
          <!-- dialog -->
       <v-row justify="center">
         <v-dialog v-model="dialog" max-width="400">
@@ -99,14 +98,12 @@
 <script>
 import NavBar from "@/components/NavBar"
 import BottomNav from "@/components/BottomNav"
-import Loader from "@/assets/loader.gif"
 
 export default {
   name: "Catalog",
   components: {
     NavBar,
-    BottomNav,
-    Loader
+    BottomNav
   },
   data() {
     return {
