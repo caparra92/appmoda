@@ -1,6 +1,6 @@
-# appmoda
+# appmoda (Documentación básica de la app)
 
-## Project setup
+## Instalar dependencias
 ```
 npm install
 ```
@@ -23,7 +23,18 @@ validNumbers : [
             3457896574
           ],
 ```
+## Consulta a la api
+```
+Las peticiones a la api se realizan a traves de Axios 
+```
+
 ### Metodo de autenticación
 ```
 Se almacena información en localstorage y se remueve la llave al cerrar sesión
 ```
+### Modulos disponibles
+- Autenticación
+- Categorias
+- Catalogo
+- Carrito (Pendiente)
+
