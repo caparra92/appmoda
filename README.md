@@ -15,6 +15,10 @@ npm run serve
 npm run build
 ```
 
+## Tecnologias frontend utilizadas
+```
+La app fue desarrollada en Vue js y Vuetify como framework UI
+```
 ### Usuarios para login
 ```
 validNumbers : [
