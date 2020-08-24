@@ -5,20 +5,25 @@
 npm install
 ```
 
-### Compiles and hot-reloads for development
+### Lanzar servidor de desarrollo
 ```
 npm run serve
 ```
 
-### Compiles and minifies for production
+### Compilar a producción
 ```
 npm run build
 ```
 
-### Lints and fixes files
+### Usuarios para login
 ```
-npm run lint
+validNumbers : [
+            7865470213,
+            2345678903,
+            3457896574
+          ],
 ```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+### Metodo de autenticación
+```
+Se almacena información en localstorage y se remueve la llave al cerrar sesión
+```
